@@ -9,9 +9,9 @@ h3 {
 }
 
 .container {
-    width: 100%;
+    width: 50%;
     max-width: 1280px;
-    min-height: 450px;
+    height: 450px;
 }
 
 .slider {
