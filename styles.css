@@ -1,0 +1,75 @@
+body {
+    font-family: 'Soleil', sans-serif;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 450px;
+}
+
+.slider {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+    align-items: flex-start;
+    /* Align slides at the top */
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    /* Initial width of the slide */
+    height: 100vh;
+    margin-right: 50px;
+    /* 50px space between slides */
+    position: relative;
+    cursor: pointer;
+    transition: width 0.5s, height 0.5s;
+    overflow: hidden;
+    /* keep the overlay within the slide's boundaries */
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 85%;
+    height: 100%;
+    /* covers half the slide */
+    background: linear-gradient(to right, rgba(0, 0, 139, 0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.slide.expanded::before {
+    opacity: 1;
+}
+
+.slide:nth-child(odd) {
+    height: calc(100vh - 50px);
+}
+
+.testimonial {
+    font-family: "Helvetica Neue", arial, sans-serif;
+    font-size: 2rem;
+    position: absolute;
+    width: 75%;
+    color: white;
+    padding: 50px;
+    box-sizing: border-box;
+    text-align: left;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+}
